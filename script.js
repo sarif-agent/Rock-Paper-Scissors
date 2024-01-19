@@ -46,6 +46,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+
 function game() {
   computerPoint = 0;
   userPoint = 0;
@@ -70,6 +71,6 @@ function game() {
 
 
 
-game();
+
 
 
