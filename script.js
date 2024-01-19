@@ -1,5 +1,8 @@
 console.log("Hello World!");
 
+const final = document.getElementById("final")
+
+
 let userPoint = 0;
 let computerPoint = 0;
 
@@ -17,7 +20,6 @@ function getComputerChoice() {
 }
 
 
-
 function getPlayerChoice(a) {
   let playerchoice = prompt("Rock, Paper Scissors?");
   let casePlayerChoice = playerchoice.toLowerCase();
@@ -26,13 +28,12 @@ function getPlayerChoice(a) {
 }
 
 
-
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "Ties";
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     userPoint++
-    return "You Win! Rock beats the Scissors!";
+    return `You Win! Rock beats the Scissors!`;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     userPoint++
     return "You Win! Paper beats the Rock!";
@@ -55,13 +56,19 @@ function game() {
     console.log(roundResult)
   }
   if (userPoint > computerPoint) {
-    console.log(`You Win! Congratulations`)
+    final.innerText = `You Win! Your score is ${userPoint} against ${computerPoint}. Congratulations.`
+    console.log(`You Win! Your score is ${userPoint} against ${computerPoint}. Congratulations.`)
   } else if (computerPoint > userPoint) {
-    console.log("You Lose.")
+    final.innerText = `You Lose! Your score is ${userPoint} against ${computerPoint}. Bad Game.`
+    console.log(`You Lose! Your score is ${userPoint} against ${computerPoint}. Bad Game.`)
   } else {
-    console.log("Ties.")
+    final.innerText = `Ties. Your score is ${userPoint} against to ${computerPoint}. Equality.`
+    console.log(`Ties. Your score is ${userPoint} against to ${computerPoint}. Equality.`)
   }
 }
+
+
+
 
 game();
 
