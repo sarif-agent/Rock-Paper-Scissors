@@ -5,8 +5,15 @@ console.log("Hello World!");
 // let paper = "Paper beats Rock, but loses to Scissors";
 
 function getComputerChoice(a, b, c) {
+  let randomChoice = Math.floor(Math.random() * 3);
 
-  return a, b, c
+  if (randomChoice === 0) {
+    return a;
+  } else if (randomChoice === 1) {
+    return b;
+  } else {
+    return c;
+  }
 }
 
-console.log(getComputerChoice(rock, scissors, paper));
+console.log(getComputerChoice("rock", "scissors", "paper"));
