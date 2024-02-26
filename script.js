@@ -14,8 +14,15 @@ const playerScoreSpan = document.querySelector('.player-score');
 const computerScoreSpan = document.querySelector('.computer-score');
 
 
+
+
+
+
 let playerScore = 0;
 let computerScore = 0;
+
+playerScoreSpan.textContent = `Player Score: ${playerScore}`;
+computerScoreSpan.textContent = `Computer Score: ${computerScore}`;
 
 function getComputerChoice() {
   let randomChoice = Math.floor(Math.random() * 3);
