@@ -6,7 +6,9 @@ const scissors = document.querySelector('.scissors');
 const OutCome = document.querySelector('.outcome');
 const versus = document.querySelector('.versus');
 const p = document.createElement('p');
+const result = document.createElement('h2');
 
+//score
 const score = document.querySelector('.score');
 const playerScoreSpan = document.querySelector('.player-score');
 const computerScoreSpan = document.querySelector('.computer-score');
@@ -80,7 +82,6 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function FinalResults(playerScore, computerScore) {
-  const result = document.createElement('h2');
   if (playerScore === 5) {
     result.innerText = `Awesome! You Won the Game. Your Score is ${playerScore} against ${computerScore}`;
     OutCome.append(result)
