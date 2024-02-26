@@ -14,6 +14,10 @@ const playerScoreSpan = document.querySelector('.player-score');
 const computerScoreSpan = document.querySelector('.computer-score');
 
 
+// playRound p 
+p.style.fontSize = "22px";
+p.style.textShadow = '2px 2px 4px black';
+
 
 let playerScore = 0;
 let computerScore = 0;
@@ -109,6 +113,23 @@ function FinalResults() {
     computerScore = 0;
   }
 }
+
+// const myBox = document.querySelector('.box');
+
+// myBox.addEventListener('mouseover', event => {
+//   event.target.style.backgroundColor = "yellow";
+//   event.target.textContent = "Şaka yaptım değilim"
+// })
+
+// myBox.addEventListener('mouseout', event => {
+//   event.target.style.backgroundColor = "green";
+//   event.target.textContent = "Ben Hamas Üyesiyim 👳"
+// })
+
+// myBox.addEventListener('click', event => {
+//   event.target.style.backgroundColor = "red";
+//   event.target.textContent = "Joseph Stalin"
+// })
 
 
 

@@ -38,7 +38,7 @@ body {
   justify-content: center;
   text-shadow: 1px 1px 3px rgb(59, 5, 5);
   gap: 10px;
-  padding: 10px;
+  padding: 20px 0;
 }
 
 .score span {
@@ -48,19 +48,69 @@ body {
 .choices {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 100px;
   gap: 10px;
+  background-color: rgb(110, 0, 0);
+  animation: 1s rotate linear infinite;
+  border: 0.25rem solid;
+  border-image: conic-gradient(from var(--angle), rgb(241, 26, 123), rgb(152, 33, 118), rgb(62, 0, 31), rgb(255, 89, 172)) 1;
+  overflow: hidden;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
 
 #option {
+  border: rgb(0, 0, 0) solid;
   font-size: 30px;
   height: 150px;
   width: 200px;
   max-height: 300px;
-  border-radius: 10px;
   cursor: pointer;
+  background-color: rgb(112, 73, 73);
 }
 
 #option:hover {
   background-color: darkred;
+}
+
+
+/* experiment 
+
+.bigger-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  height: 150px;
+  width: 200px;
+}
+
+*/
+
+
+.outcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 50px;
+  color: white;
 }
