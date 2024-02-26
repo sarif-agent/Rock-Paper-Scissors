@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(35, 20, 60);
+}
+
+.title {
+  display: flex;
+  padding: 15px 0;
+  justify-content: center;
+}
+
+.title h1 {
+  color: rgb(243, 25, 25);
+  text-shadow: 2px 7px 5px rgba(59, 59, 59, 0.3),
+    0px -4px 10px rgba(131, 126, 126, 0.3);
+  ;
+}
+
+.rule {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+  color: white;
+}
+
+.rule p {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.score {
+  display: flex;
+  color: white;
+  justify-content: center;
+  text-shadow: 1px 1px 3px rgb(59, 5, 5);
+  gap: 10px;
+  padding: 10px;
+}
+
+.score span {
+  font-size: large;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+#option {
+  font-size: 30px;
+  height: 150px;
+  width: 200px;
+  max-height: 300px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#option:hover {
+  background-color: darkred;
+}
