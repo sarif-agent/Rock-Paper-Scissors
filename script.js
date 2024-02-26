@@ -6,9 +6,13 @@ const scissors = document.querySelector('.scissors');
 const OutCome = document.querySelector('.outcome');
 const versus = document.querySelector('.versus');
 
+const score = document.querySelector('.score');
+const playerScoreSpan = document.querySelector('.player-score');
+const computerScoreSpan = document.querySelector('.computer-score');
 
-let userPoint = 0;
-let computerPoint = 0;
+
+let playerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
   let randomChoice = Math.floor(Math.random() * 3);
@@ -22,32 +26,34 @@ function getComputerChoice() {
   }
 }
 
+function updateScores(playerScore, computerScore) {
+  playerScoreSpan.innerText = `Player Score: ${playerScore}`;
+  computerScoreSpan.innerText = `Computer Score: ${computerScore}`;
+}
+
 
 rock.addEventListener('click', () => {
   const computerChoice = getComputerChoice();
   const playerChoice = rock.innerText.toLowerCase();
-  const h5 = document.createElement('h5');
-  h5.textContent = `You choose ${playerChoice} versus ${computerChoice}`;
-  versus.append(h5);
   playRound(playerChoice, computerChoice);
+  updateScores(playerScore, computerScore);
+  FinalResults(playerScore, computerScore);
 })
 
 paper.addEventListener('click', () => {
   const computerChoice = getComputerChoice();
   const playerChoice = paper.innerText.toLowerCase();
-  const h5 = document.createElement('h5');
-  h5.textContent = `You choose ${playerChoice} versus ${computerChoice}`;
-  versus.append(h5);
   playRound(playerChoice, computerChoice);
+  updateScores(playerScore, computerScore);
+  FinalResults(playerScore, computerScore);
 })
 
 scissors.addEventListener('click', () => {
   const computerChoice = getComputerChoice();
   const playerChoice = scissors.innerText.toLowerCase();
-  const h5 = document.createElement('h5');
-  h5.textContent = `You choose ${playerChoice} versus ${computerChoice}`;
-  versus.append(h5);
   playRound(playerChoice, computerChoice);
+  updateScores(playerScore, computerScore);
+  FinalResults(playerScore, computerScore);
 })
 
 function playRound(playerSelection, computerSelection) {
@@ -56,25 +62,35 @@ function playRound(playerSelection, computerSelection) {
     p.innerText = `Ties ${playerSelection} to ${computerSelection}`;
     OutCome.appendChild(p);
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    userPoint++
+    playerScore++
     const p = document.createElement('p');
     p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
     OutCome.appendChild(p);
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    userPoint++
+    playerScore++
     const p = document.createElement('p');
     p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
     OutCome.appendChild(p);
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    userPoint++
+    playerScore++
     const p = document.createElement('p');
     p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
     OutCome.appendChild(p);
   } else {
-    computerPoint++
+    computerScore++
     const p = document.createElement('p');
     p.innerText = `You Lose! ${computerSelection} beats ${playerSelection}`;
-    OutCome.appendChild(p);
+  }
+}
+
+function FinalResults(playerScore, computerScore) {
+  const result = document.createElement('h2');
+  if (playerScore === 5) {
+    result.innerText = `Awesome! You Won the Game. Your Score is ${playerScore} against ${computerScore}`;
+    OutCome.append(result)
+  } else if (computerScore === 5) {
+    result.innerText = `Yikes! You Lose the Game. Your Score is ${playerScore} against ${computerScore}`;
+    OutCome.append(result)
   }
 }
 
