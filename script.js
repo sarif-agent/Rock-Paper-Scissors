@@ -33,6 +33,8 @@ function getComputerChoice() {
   }
 }
 
+
+
 function updateScores(playerScore, computerScore) {
   playerScoreSpan.innerText = `Player Score: ${playerScore}`;
   computerScoreSpan.innerText = `Computer Score: ${computerScore}`;
@@ -44,7 +46,7 @@ rock.addEventListener('click', () => {
     result.innerText = " ";
   }
   const computerChoice = getComputerChoice();
-  const playerChoice = rock.innerText.toLowerCase();
+  const playerChoice = 'rock';
   playRound(playerChoice, computerChoice);
   updateScores(playerScore, computerScore);
   FinalResults(playerScore, computerScore);
@@ -55,7 +57,7 @@ paper.addEventListener('click', () => {
     result.innerText = " ";
   }
   const computerChoice = getComputerChoice();
-  const playerChoice = paper.innerText.toLowerCase();
+  const playerChoice = 'paper';
   playRound(playerChoice, computerChoice);
   updateScores(playerScore, computerScore);
   FinalResults(playerScore, computerScore);
@@ -66,7 +68,7 @@ scissors.addEventListener('click', () => {
     result.innerText = " ";
   }
   const computerChoice = getComputerChoice();
-  const playerChoice = scissors.innerText.toLowerCase();
+  const playerChoice = 'scissors';
   playRound(playerChoice, computerChoice);
   updateScores(playerScore, computerScore);
   FinalResults(playerScore, computerScore);
