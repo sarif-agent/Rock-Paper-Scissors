@@ -15,9 +15,6 @@ const computerScoreSpan = document.querySelector('.computer-score');
 
 
 
-
-
-
 let playerScore = 0;
 let computerScore = 0;
 
@@ -43,6 +40,9 @@ function updateScores(playerScore, computerScore) {
 
 
 rock.addEventListener('click', () => {
+  if (playerScore == 0 && computerScore == 0) {
+    result.innerText = " ";
+  }
   const computerChoice = getComputerChoice();
   const playerChoice = rock.innerText.toLowerCase();
   playRound(playerChoice, computerChoice);
@@ -51,6 +51,9 @@ rock.addEventListener('click', () => {
 })
 
 paper.addEventListener('click', () => {
+  if (playerScore == 0 && computerScore == 0) {
+    result.innerText = " ";
+  }
   const computerChoice = getComputerChoice();
   const playerChoice = paper.innerText.toLowerCase();
   playRound(playerChoice, computerChoice);
@@ -59,6 +62,9 @@ paper.addEventListener('click', () => {
 })
 
 scissors.addEventListener('click', () => {
+  if (playerScore == 0 && computerScore == 0) {
+    result.innerText = " ";
+  }
   const computerChoice = getComputerChoice();
   const playerChoice = scissors.innerText.toLowerCase();
   playRound(playerChoice, computerChoice);
@@ -88,13 +94,17 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function FinalResults(playerScore, computerScore) {
+function FinalResults() {
   if (playerScore === 5) {
     result.innerText = `Awesome! You Won the Game. Your Score is ${playerScore} against ${computerScore}`;
     OutCome.append(result)
+    playerScore = 0;
+    computerScore = 0;
   } else if (computerScore === 5) {
     result.innerText = `Yikes! You Lose the Game. Your Score is ${playerScore} against ${computerScore}`;
     OutCome.append(result)
+    playerScore = 0;
+    computerScore = 0;
   }
 }
 
