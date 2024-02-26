@@ -5,6 +5,7 @@ const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
 const OutCome = document.querySelector('.outcome');
 const versus = document.querySelector('.versus');
+const p = document.createElement('p');
 
 const score = document.querySelector('.score');
 const playerScoreSpan = document.querySelector('.player-score');
@@ -58,27 +59,22 @@ scissors.addEventListener('click', () => {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    const p = document.createElement('p');
     p.innerText = `Ties ${playerSelection} to ${computerSelection}`;
     OutCome.appendChild(p);
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++
-    const p = document.createElement('p');
     p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
     OutCome.appendChild(p);
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++
-    const p = document.createElement('p');
     p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
     OutCome.appendChild(p);
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++
-    const p = document.createElement('p');
     p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
     OutCome.appendChild(p);
   } else {
     computerScore++
-    const p = document.createElement('p');
     p.innerText = `You Lose! ${computerSelection} beats ${playerSelection}`;
   }
 }
