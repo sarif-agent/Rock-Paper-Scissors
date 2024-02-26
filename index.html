@@ -4,11 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Rock Papper Scissors</title>
-
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <h1>Rock, Paper, Scissors Game!</h1>
+  <div class="title">
+    <h1>Rock, Paper, Scissors Game</h1>
+  </div>
+
+  <div class="rule">
+    <p class="disclaimer">The first player to reach 5 points wins the game.</p>
+  </div>
 
   <div class="score">
     <span class="player-score"></span>
@@ -16,9 +22,9 @@
   </div>
 
   <div class="choices">
-    <button class="rock">Rock</button>
-    <button class="scissors">Paper</button>
-    <button class="paper">Scissors</button>
+    <button class="rock" id="option">⛰️</button>
+    <button class="scissors" id="option">📜</button>
+    <button class="paper" id="option">✂️</button>
   </div>
 
   <div class="versus"></div>
