@@ -134,7 +134,7 @@ function playRound(playerSelection, computerSelection) {
   } else {
     computerScore++
     p.innerText = `You Lose! ${computerSelection} beats ${playerSelection}.`;
-    p.style.color = 'red';
+    p.style.color = '#EF0107';
     OutCome.append(p);
   }
 }
