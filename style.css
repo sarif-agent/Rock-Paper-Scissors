@@ -92,27 +92,6 @@ body {
 }
 
 
-/* experiment 
-
-.bigger-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-color: white;
-  height: 150px;
-  width: 200px;
-}
-
-*/
-
-
 .outcome {
   display: flex;
   flex-direction: column;
