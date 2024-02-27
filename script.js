@@ -9,6 +9,8 @@ const p = document.createElement('p');
 const result = document.createElement('h2');
 
 const clickSfx = new Audio('./sounds/clicksfx.wav');
+const winSfx = new Audio('./sounds/winnersfx.wav');
+const lostSfx = new Audio('./sounds/lostsfx.wav');
 
 
 //score
@@ -111,27 +113,27 @@ scissors.addEventListener('mouseout', (event) => {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    p.innerText = `Ties ${playerSelection} to ${computerSelection}`;
+    p.innerText = `Ties ${playerSelection} to ${computerSelection}.`;
     p.style.color = 'white';
     OutCome.append(p);
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++
-    p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
+    p.innerText = `You Win! ${playerSelection} beats ${computerSelection}.`;
     p.style.color = '#00FFFF';
     OutCome.append(p);
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++
-    p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
+    p.innerText = `You Win! ${playerSelection} beats ${computerSelection}.`;
     p.style.color = '#00FFFF';
     OutCome.append(p);
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++
-    p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
+    p.innerText = `You Win! ${playerSelection} beats ${computerSelection}.`;
     p.style.color = '#00FFFF';
     OutCome.append(p);
   } else {
     computerScore++
-    p.innerText = `You Lose! ${computerSelection} beats ${playerSelection}`;
+    p.innerText = `You Lose! ${computerSelection} beats ${playerSelection}.`;
     p.style.color = 'red';
     OutCome.append(p);
   }
@@ -139,15 +141,17 @@ function playRound(playerSelection, computerSelection) {
 
 function FinalResults() {
   if (playerScore === 5) {
-    result.innerText = `Awesome! You Won the Game. Your Score is ${playerScore} against ${computerScore}`;
+    result.innerText = `Awesome! You Won the Game. Your Score is ${playerScore} against ${computerScore}.`;
     OutCome.append(result)
-    result.style.color = 'green';
+    winSfx.play();
+    result.style.color = '#00FF00';
     result.style.fontWeight = '700';
     playerScore = 0;
     computerScore = 0;
   } else if (computerScore === 5) {
-    result.innerText = `Yikes! You Lose the Game. Your Score is ${playerScore} against ${computerScore}`;
+    result.innerText = `Yikes! You Lose the Game. Your Score is ${playerScore} against ${computerScore}.`;
     OutCome.append(result)
+    lostSfx.play();
     result.style.color = 'red';
     result.style.fontWeight = '700';
     playerScore = 0;
