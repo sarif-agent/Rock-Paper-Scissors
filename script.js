@@ -146,6 +146,7 @@ function FinalResults() {
     winSfx.play();
     result.style.color = '#00FF00';
     result.style.fontWeight = '700';
+    result.style.textShadow = '2px 2px 4px black';
     playerScore = 0;
     computerScore = 0;
   } else if (computerScore === 5) {
@@ -154,6 +155,7 @@ function FinalResults() {
     lostSfx.play();
     result.style.color = 'red';
     result.style.fontWeight = '700';
+    result.style.textShadow = '2px 2px 4px black';
     playerScore = 0;
     computerScore = 0;
   }
