@@ -8,6 +8,9 @@ const versus = document.querySelector('.versus');
 const p = document.createElement('p');
 const result = document.createElement('h2');
 
+const clickSfx = new Audio('./sounds/clicksfx.wav');
+
+
 //score
 const score = document.querySelector('.score');
 const playerScoreSpan = document.querySelector('.player-score');
@@ -51,6 +54,7 @@ rock.addEventListener('click', () => {
   }
   const computerChoice = getComputerChoice();
   const playerChoice = 'rock';
+  clickSfx.play();
   playRound(playerChoice, computerChoice);
   updateScores(playerScore, computerScore);
   FinalResults(playerScore, computerScore);
@@ -70,6 +74,7 @@ paper.addEventListener('click', () => {
   }
   const computerChoice = getComputerChoice();
   const playerChoice = 'paper';
+  clickSfx.play();
   playRound(playerChoice, computerChoice);
   updateScores(playerScore, computerScore);
   FinalResults(playerScore, computerScore);
@@ -89,6 +94,7 @@ scissors.addEventListener('click', () => {
   }
   const computerChoice = getComputerChoice();
   const playerChoice = 'scissors';
+  clickSfx.play();
   playRound(playerChoice, computerChoice);
   updateScores(playerScore, computerScore);
   FinalResults(playerScore, computerScore);

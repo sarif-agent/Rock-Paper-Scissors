@@ -82,13 +82,13 @@ body {
   font-size: 30px;
   height: 150px;
   width: 200px;
-  max-height: 300px;
+  max-height: 250px;
   cursor: pointer;
-  background-color: rgb(112, 73, 73);
+  background-color: #865DFF;
 }
 
 #option:hover {
-  background-color: darkred;
+  background-color: #E384FF;
 }
 
 
