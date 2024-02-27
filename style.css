@@ -5,6 +5,7 @@
 
 body {
   background-color: rgb(35, 20, 60);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .title {
@@ -14,9 +15,9 @@ body {
 }
 
 .title h1 {
-  color: rgb(243, 25, 25);
+  color: #AA0000;
   text-shadow: 2px 7px 5px rgba(59, 59, 59, 0.3),
-    0px -4px 10px rgba(131, 126, 126, 0.3);
+    0px -4px 10px rgba(32, 32, 32, 0.3);
   ;
 }
 
@@ -36,7 +37,7 @@ body {
   display: flex;
   color: white;
   justify-content: center;
-  text-shadow: 1px 1px 3px rgb(59, 5, 5);
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
   gap: 10px;
   padding: 20px 0;
 }
@@ -45,15 +46,22 @@ body {
   font-size: large;
 }
 
+.border {
+  display: flex;
+  justify-content: center;
+}
+
 .choices {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 100px;
-  gap: 10px;
-  background-color: rgb(110, 0, 0);
-  animation: 1s rotate linear infinite;
+  width: fit-content;
+  gap: 10px 0;
+  background-color: rgb(12, 12, 12);
+  animation: 3s rotate linear infinite;
   border: 0.25rem solid;
-  border-image: conic-gradient(from var(--angle), rgb(241, 26, 123), rgb(152, 33, 118), rgb(62, 0, 31), rgb(255, 89, 172)) 1;
+  border-image: conic-gradient(from var(--angle), rgb(82, 82, 82), rgb(152, 33, 118), rgb(10, 0, 39), rgb(100, 100, 100)) 1;
   overflow: hidden;
 }
 
