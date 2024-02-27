@@ -56,6 +56,14 @@ rock.addEventListener('click', () => {
   FinalResults(playerScore, computerScore);
 })
 
+rock.addEventListener('mouseover', (event) => {
+  event.target.textContent = '⛰️';
+})
+
+rock.addEventListener('mouseout', (event) => {
+  event.target.textContent = 'ROCK';
+})
+
 paper.addEventListener('click', () => {
   if (playerScore == 0 && computerScore == 0) {
     result.innerText = " ";
@@ -65,6 +73,14 @@ paper.addEventListener('click', () => {
   playRound(playerChoice, computerChoice);
   updateScores(playerScore, computerScore);
   FinalResults(playerScore, computerScore);
+})
+
+paper.addEventListener('mouseover', (event) => {
+  event.target.textContent = '📜';
+})
+
+paper.addEventListener('mouseout', (event) => {
+  event.target.textContent = 'PAPER';
 })
 
 scissors.addEventListener('click', () => {
@@ -78,25 +94,40 @@ scissors.addEventListener('click', () => {
   FinalResults(playerScore, computerScore);
 })
 
+scissors.addEventListener('mouseover', (event) => {
+  event.target.textContent = '✂️';
+})
+
+scissors.addEventListener('mouseout', (event) => {
+  event.target.textContent = 'SCISSORS';
+})
+
+
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     p.innerText = `Ties ${playerSelection} to ${computerSelection}`;
-    OutCome.appendChild(p);
+    p.style.color = 'white';
+    OutCome.append(p);
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++
     p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
-    OutCome.appendChild(p);
+    p.style.color = '#00FFFF';
+    OutCome.append(p);
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++
     p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
-    OutCome.appendChild(p);
+    p.style.color = '#00FFFF';
+    OutCome.append(p);
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++
     p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
-    OutCome.appendChild(p);
+    p.style.color = '#00FFFF';
+    OutCome.append(p);
   } else {
     computerScore++
     p.innerText = `You Lose! ${computerSelection} beats ${playerSelection}`;
+    p.style.color = 'red';
+    OutCome.append(p);
   }
 }
 
@@ -104,55 +135,19 @@ function FinalResults() {
   if (playerScore === 5) {
     result.innerText = `Awesome! You Won the Game. Your Score is ${playerScore} against ${computerScore}`;
     OutCome.append(result)
+    result.style.color = 'green';
+    result.style.fontWeight = '700';
     playerScore = 0;
     computerScore = 0;
   } else if (computerScore === 5) {
     result.innerText = `Yikes! You Lose the Game. Your Score is ${playerScore} against ${computerScore}`;
     OutCome.append(result)
+    result.style.color = 'red';
+    result.style.fontWeight = '700';
     playerScore = 0;
     computerScore = 0;
   }
 }
-
-// const myBox = document.querySelector('.box');
-
-// myBox.addEventListener('mouseover', event => {
-//   event.target.style.backgroundColor = "yellow";
-//   event.target.textContent = "Şaka yaptım değilim"
-// })
-
-// myBox.addEventListener('mouseout', event => {
-//   event.target.style.backgroundColor = "green";
-//   event.target.textContent = "Ben Hamas Üyesiyim 👳"
-// })
-
-// myBox.addEventListener('click', event => {
-//   event.target.style.backgroundColor = "red";
-//   event.target.textContent = "Joseph Stalin"
-// })
-
-
-
-
-// function game() {
-//   computerPoint = 0;
-//   userPoint = 0;
-//   // for (let game = 0; game < 5; game++) {
-//   const playerSelection = getPlayerChoice();
-//   const computerSelection = getComputerChoice();
-//   const roundResult = playRound(playerSelection, computerSelection);
-//   console.log(roundResult)
-// }
-// if (userPoint > computerPoint) {
-//   final.innerText = `You Win! Your score is ${userPoint} against ${computerPoint}. Congratulations.`
-//   console.log(`You Win! Your score is ${userPoint} against ${computerPoint}. Congratulations.`)
-// } else if (computerPoint > userPoint) {
-//   final.innerText = `You Lose! Your score is ${userPoint} against ${computerPoint}. Bad Game.`
-//   console.log(`You Lose! Your score is ${userPoint} against ${computerPoint}. Bad Game.`)
-// } else {
-//   final.innerText = `Ties. Your score is ${userPoint} against to ${computerPoint}. Equality.`
-//   console.log(`Ties. Your score is ${userPoint} against to ${computerPoint}. Equality.`)
-// }
 
 
 
