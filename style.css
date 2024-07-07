@@ -1,17 +1,19 @@
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: rgb(80, 80, 80);
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
-  max-width: 100%;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 20px;
 }
 
 canvas {
@@ -19,6 +21,8 @@ canvas {
   top: 0;
   left: 0;
   pointer-events: none;
+  width: 100%;
+  height: 100%;
 }
 
 .container {
@@ -28,8 +32,6 @@ canvas {
   justify-content: center;
   width: 100%;
   max-width: 1200px;
-  padding: 20px;
-  box-sizing: border-box;
 }
 
 .title {
@@ -42,10 +44,10 @@ canvas {
   font-family: "Kode Mono", monospace;
   font-weight: 650;
   font-style: normal;
-  font-size: 52px;
+  font-size: 4vw;
+  /* Dynamic size based on viewport width */
   color: rgb(147, 0, 167);
-  text-shadow: 2px 2px 2px rgb(173, 173, 173),
-    0px -4px 10px rgba(0, 0, 0, 0.877);
+  text-shadow: 2px 2px 2px rgb(173, 173, 173), 0px -4px 10px rgba(0, 0, 0, 0.877);
 }
 
 .rule {
@@ -53,10 +55,12 @@ canvas {
   justify-content: center;
   padding: 5px 0;
   color: white;
+  text-align: center;
 }
 
 .rule p {
-  font-size: 22px;
+  font-size: 2vw;
+  /* Dynamic size based on viewport width */
   font-weight: 400;
 }
 
@@ -70,19 +74,21 @@ canvas {
 }
 
 .score span {
-  font-size: 22px;
+  font-size: 2vw;
+  /* Dynamic size based on viewport width */
 }
 
 .border {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .choices {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 20px;
   width: fit-content;
   gap: 10px;
   background: rgb(0, 0, 0);
@@ -109,10 +115,13 @@ canvas {
   background: rgb(238, 174, 202);
   background: radial-gradient(circle, rgba(238, 174, 202, 0.541) 0%, rgba(148, 188, 233, 0.548) 100%);
   margin: 0 10px;
-  font-size: 30px;
-  height: 150px;
-  width: 200px;
-  max-height: 250px;
+  font-size: 2vw;
+  /* Dynamic size based on viewport width */
+  height: 10vw;
+  /* Dynamic size based on viewport width */
+  width: 15vw;
+  /* Dynamic size based on viewport width */
+  max-height: 150px;
   cursor: pointer;
   background-color: #865DFF;
 }
@@ -127,4 +136,99 @@ canvas {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  paddin
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.outcome p {
+  font-size: 2vw;
+  /* Dynamic size based on viewport width */
+}
+
+/* Media query for tablets */
+@media (min-width: 768px) {
+  .title h1 {
+    font-size: 6vw;
+  }
+
+  .rule p {
+    font-size: 3vw;
+  }
+
+  .score span {
+    font-size: 3vw;
+  }
+
+  .choices {
+    padding: 50px;
+  }
+
+  #option {
+    font-size: 4vw;
+    height: 12vw;
+    width: 20vw;
+  }
+
+  .outcome p {
+    font-size: 3vw;
+  }
+}
+
+/* Media query for desktops */
+@media (min-width: 1024px) {
+  .title h1 {
+    font-size: 4vw;
+  }
+
+  .rule p {
+    font-size: 2vw;
+  }
+
+  .score span {
+    font-size: 2vw;
+  }
+
+  .choices {
+    padding: 75px;
+  }
+
+  #option {
+    font-size: 3vw;
+    height: 10vw;
+    width: 15vw;
+  }
+
+  .outcome p {
+    font-size: 2vw;
+  }
+}
+
+/* Media query for larger desktops */
+@media (min-width: 1366px) {
+  .title h1 {
+    font-size: 3vw;
+  }
+
+  .rule p {
+    font-size: 1.5vw;
+  }
+
+  .score span {
+    font-size: 1.5vw;
+  }
+
+  .choices {
+    padding: 100px;
+  }
+
+  #option {
+    font-size: 2vw;
+    height: 8vw;
+    width: 12vw;
+  }
+
+  .outcome p {
+    font-size: 1.5vw;
+  }
+}
